@@ -1532,12 +1532,11 @@ private:
         for (auto imageView : swapChainImageViews) {
             vkDestroyImageView(device, imageView, nullptr);
         }
-
-        vkDestroySwapchainKHR(device, swapchain, nullptr);
     }
 
     void cleanup() {
         cleanupSwapChain();
+        vkb::destroy_swapchain(swapchain);
 
         vkDestroySampler(device, textureSampler, nullptr);
         vkDestroyImageView(device, textureImageView, nullptr);
