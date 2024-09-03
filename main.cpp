@@ -1386,11 +1386,6 @@ private:
         auto phys_device_ret = phys_device_selector.set_surface(surface)
             .set_required_features(features)
             .set_required_features_13(features13)
-            //.add_required_extension(VK_KHR_DYNAMIC_RENDERING_EXTENSION_NAME)
-            //.add_required_extension(VK_KHR_MAINTENANCE2_EXTENSION_NAME)
-            //.add_required_extension(VK_KHR_MULTIVIEW_EXTENSION_NAME)
-            //.add_required_extension(VK_KHR_CREATE_RENDERPASS_2_EXTENSION_NAME)
-            //.add_required_extension(VK_KHR_DEPTH_STENCIL_RESOLVE_EXTENSION_NAME)
             .select();
         if (!phys_device_ret) {
             throw std::runtime_error(phys_device_ret.error().message());
